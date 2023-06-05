@@ -1,0 +1,150 @@
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter/Inter-VariableFont_slnt\,wght.ttf");
+  font-weight: 700;
+  color: #000;
+}
+
+body {
+  background: #999;
+  font-family: "Inter";
+}
+
+p {
+  font-weight: 700;
+  font-size: 15px;
+  color: #000;
+  width: 100%;
+  padding-left: 20px;
+  text-align: start;
+}
+
+.arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+}
+
+.arrow img {
+  width: 20px;
+  height: 20px;
+}
+
+.nav {
+  position: relative;
+  background: none;
+  text-align: center;
+}
+
+.nav a {
+  text-decoration: none;
+  display: block;
+}
+
+.nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.topmenu {
+  position: absolute;
+  width: 100%;
+  z-index: 3;
+}
+
+.topmenu>li:last-child {
+  text-align: start;
+  width: 30%;
+  background: white;
+  border-radius: 0 0 0 8px;
+}
+
+.topmenu>li {
+  text-align: start;
+  width: 30%;
+  background: white;
+}
+
+.topmenu>li>a {
+  display: flex;
+  width: 100%;
+}
+
+.submenu {
+  position: absolute;
+  z-index: 2;
+  left: 30%;
+  top: 0;
+  visibility: hidden;
+  opacity: 0;
+  width: 30%;
+  transition: 0.7s ease-in-out;
+  height: 100%;
+  background: #fff;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.24);
+}
+
+.submenu>li {
+  text-align: start;
+  width: 100%;
+  background: white;
+}
+
+.submenu>li>a {
+  display: flex;
+  width: 100%;
+}
+
+.submenu-2 {
+  position: absolute;
+  z-index: 5;
+  left: 100%;
+  top: 0;
+  visibility: hidden;
+  opacity: 0;
+  width: 105%;
+  transition: 0.7s ease-in-out;
+  border-radius: 0 8px 8px 0;
+  height: 100%;
+  background: #fff;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.24);
+  border-radius: 0px 9px 9px 0px;
+}
+
+.submenu-2>li {
+  display: flex;
+  width: 98%;
+  box-shadow:inset 0px 4px 8px rgba(0, 0, 0, 0.24);
+}
+
+.submenu-2>li>a {
+  display: flex;
+  background: white;
+  text-align: center;
+  width: 100%;
+}
+
+.topmenu li:hover>.submenu {
+  visibility: visible;
+  opacity: 1;
+}
+
+.submenu li:hover>.submenu-2 {
+  visibility: visible;
+  opacity: 1;
+}
+
+.topmenu>li:hover {
+  /* background: rgb(106, 106, 214); */
+  /* opacity: .2; */
+}
+
+.submenu>li :hover {
+  background: rgb(189, 189, 121);
+}
+
+.submenu-2>li :hover {
+  background: rgb(204, 118, 118);
+}
