@@ -1,21 +1,24 @@
 @font-face {
   font-family: "Inter";
   src: url("/fonts/Inter/Inter-VariableFont_slnt\,wght.ttf");
-  font-weight: 700;
+  font-weight: 600;
   color: #000;
 }
+
+:root {}
 
 body {
   background: #999;
   font-family: "Inter";
 }
 
-p {
-  font-weight: 700;
+.menu_item {
+  display: block;
+  font-weight: 600;
   font-size: 15px;
   color: #000;
   width: 100%;
-  padding-left: 20px;
+  padding: 10px 0 15px 20px;
   text-align: start;
 }
 
@@ -33,8 +36,8 @@ p {
 
 .nav {
   position: relative;
-  background: none;
   text-align: center;
+  background: #fff;
 }
 
 .nav a {
@@ -42,7 +45,7 @@ p {
   display: block;
 }
 
-.nav ul {
+.nav ul:not(.nav ul:first-child) {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -50,21 +53,31 @@ p {
 
 .topmenu {
   position: absolute;
+  left: 18%;
+  z-index: 0;
+  width: 33%;
+  max-width: 400px;
+}
+
+.topmenu::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  height: 100%;
   width: 100%;
-  z-index: 3;
-  /* background: #fff; */
+  background: transparent;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.24);
 }
 
 .topmenu>li:last-child {
-  text-align: start;
-  width: 30%;
-  background: white;
+  width: 100%;
   border-radius: 0 0 0 8px;
 }
 
 .topmenu>li {
   text-align: start;
-  width: 30%;
+  width: 100%;
   background: white;
 }
 
@@ -75,15 +88,23 @@ p {
 
 .submenu {
   position: absolute;
-  z-index: 2;
-  left: 30%;
+  z-index: -2;
+  left: 100%;
   top: 0;
-  visibility: hidden;
-  opacity: 0;
-  width: 30%;
-  transition: 0.7s ease-in-out;
+  display: none;
+  width: 100%;
   height: 100%;
   background: #fff;
+}
+
+.submenu:before {
+  content: "";
+  position: absolute;
+  z-index: -3;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: transparent;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.24);
 }
 
@@ -100,23 +121,18 @@ p {
 
 .submenu-2 {
   position: absolute;
-  z-index: 5;
+  z-index: -4;
   left: 100%;
   top: 0;
-  visibility: hidden;
-  opacity: 0;
-  width: 105%;
-  transition: 0.7s ease-in-out;
+  display: none;
+  width: 50%;
   border-radius: 0 8px 8px 0;
   height: 100%;
   background: #fff;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.24);
-  border-radius: 0px 9px 9px 0px;
 }
 
-.submenu-2>li {
-  display: flex;
-  width: 98%;
+.submenu-2>li:first-child>a {
+  border-radius: 0 8px 0 0;
 }
 
 .submenu-2>li>a {
@@ -127,27 +143,63 @@ p {
 }
 
 .topmenu li:hover>.submenu {
-  visibility: visible;
-  opacity: 1;
+  display: block;
 }
 
 .submenu li:hover>.submenu-2 {
-  visibility: visible;
-  opacity: 1;
+  display: block;
 }
 
 .topmenu>li:hover {
   background: rgb(8, 118, 166, 0.2);
 }
 
+/* Стиль применяется, только если стоит пробел между li :hover, но окрашивается текст  */
 .submenu-2>li :hover {
-  background: rgb(8, 118, 166, 0.2);
+  background: rgb(8, 118, 166, 0.1);
 }
 
 .submenu>li:hover:has(.submenu-2 > li) {
   background: rgb(8, 118, 166, 0.2);
 }
 
-p {
+.left_side_menu {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  padding: 0;
+  margin: 0;
+  background: #fff;
+  width: 18%;
+  text-align: start;
+  list-style: none;
+  border-radius: 0 0 0 8px;
+}
+
+.left_side_menu>li {
+  text-align: start;
+  width: 100%;
+  background: white;
+}
+
+.left_side_menu>li:last-child {
+  width: 100%;
+  border-radius: 0 0 0 8px;
+}
+
+.left_side_menu>li>a {
+  display: flex;
+  width: 100%;
+}
+
+.left_side_menu:before {
+  content: "";
+  position: absolute;
+  z-index: -3;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
   background: transparent;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.24);
 }
