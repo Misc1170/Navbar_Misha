@@ -52,6 +52,7 @@ p {
   position: absolute;
   width: 100%;
   z-index: 3;
+  /* background: #fff; */
 }
 
 .topmenu>li:last-child {
@@ -116,7 +117,6 @@ p {
 .submenu-2>li {
   display: flex;
   width: 98%;
-  box-shadow:inset 0px 4px 8px rgba(0, 0, 0, 0.24);
 }
 
 .submenu-2>li>a {
@@ -137,14 +137,17 @@ p {
 }
 
 .topmenu>li:hover {
-  /* background: rgb(106, 106, 214); */
-  /* opacity: .2; */
-}
-
-.submenu>li :hover {
-  background: rgb(189, 189, 121);
+  background: rgb(8, 118, 166, 0.2);
 }
 
 .submenu-2>li :hover {
-  background: rgb(204, 118, 118);
+  background: rgb(8, 118, 166, 0.2);
+}
+
+.submenu>li:hover:has(.submenu-2 > li) {
+  background: rgb(8, 118, 166, 0.2);
+}
+
+p {
+  background: transparent;
 }
